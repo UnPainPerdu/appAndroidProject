@@ -1,13 +1,30 @@
 package be.heh.projetapphyb
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import be.heh.projetapphyb.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity()
 {
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        if (null == true)
+        {
+
+        }
+    }
+
+    fun onMainClickManager(view : View)
+    {
+        when(view.id)
+        {
+            binding.btMain1.id ->{}
+        }
     }
 }

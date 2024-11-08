@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@drawable/degrade"
+    tools:context="be.heh.projetapphyb.MainActivity">
 
     <TextView
         android:id="@+id/tv_main_1"
@@ -13,10 +14,74 @@
         android:layout_height="wrap_content"
         android:text="@string/tv_main_1"
         android:textSize="30sp"
+        android:padding="10dp"
+        android:background="@drawable/standart_vt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.132" />
+
+    <TextView
+        android:id="@+id/tv_main_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/standart_vt"
+        android:padding="10dp"
+        android:text="@string/tv_main_2"
+        android:textSize="20sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_main_1"
+        app:layout_constraintVertical_bias="0.059" />
+
+    <EditText
+        android:id="@+id/et_main_1"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:autofillHints="none"
+        android:hint="@string/et_main_1"
+        android:inputType="text"
+        android:padding="10dp"
+        android:background="@drawable/standart_edit_texte"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_main_2"
+        app:layout_constraintVertical_bias="0.077" />
+
+    <EditText
+        android:id="@+id/et_main_2"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:autofillHints="none"
+        android:hint="@string/et_main_2"
+        android:inputType="text"
+        android:padding="10dp"
+        android:background="@drawable/standart_edit_texte"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_main_1"
+        app:layout_constraintVertical_bias="0.075" />
+
+    <Button
+        android:id="@+id/bt_main_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn"
+        android:onClick="onMainClickManager"
+        android:text="@string/bt_main_1"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_main_2"
+        app:layout_constraintVertical_bias="0.143"
+        tools:ignore="OnClick" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
