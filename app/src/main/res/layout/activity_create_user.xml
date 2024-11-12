@@ -101,4 +101,19 @@
         app:layout_constraintVertical_bias="0.256"
         tools:ignore="OnClick" />
 
+    <Button
+        android:id="@+id/bt_createuser_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn"
+        android:onClick="onCreateUserClickManager"
+        android:padding="10dp"
+        android:text="@string/bt_createuser_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_createuser_1"
+        app:layout_constraintVertical_bias="0.256"
+        tools:ignore="OnClick" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

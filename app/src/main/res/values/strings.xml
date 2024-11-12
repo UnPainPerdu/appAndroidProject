@@ -12,7 +12,8 @@
     <string name="et_createuser_1">Email</string>
     <string name="et_createuser_2">Mot de passe</string>
     <string name="et_createuser_3">Confirmer le Mot de passe</string>
-    <string name="bt_createuser_1">Se connecter</string>
+    <string name="bt_createuser_1">Créer l\'utilisateur</string>
+    <string name="bt_createuser_2">Retour à la page de connection</string>
 
 
 </resources>

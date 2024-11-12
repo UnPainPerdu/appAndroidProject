@@ -1,5 +1,6 @@
 package be.heh.projetapphyb
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -23,6 +24,7 @@ class CreateUserActivity : AppCompatActivity()
         super.onCreate(savedInstanceState)
         binding = ActivityCreateUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        Log.i("PROJETAPPHYB", "CreateUSerActivity started")
     }
 
     fun onCreateUserClickManager(view : View)
@@ -30,7 +32,18 @@ class CreateUserActivity : AppCompatActivity()
         when(view.id)
         {
             binding.btCreateuser1.id -> lifecycleScope.launch{createUser()}
+            binding.btCreateuser2.id -> sentTo("main")
             else -> Log.i("PROJETAPPHYB-ERROR", "no function start")
+        }
+    }
+
+    private fun sentTo(s: String)
+    {
+        Log.i("PROJETAPPHYB", "Send to : $s")
+        when(s)
+        {
+            "main"-> {startActivity(Intent(this, MainActivity::class.java))}
+            else -> Log.i("PROJETAPPHYB-ERROR", "no where to send")
         }
     }
 
