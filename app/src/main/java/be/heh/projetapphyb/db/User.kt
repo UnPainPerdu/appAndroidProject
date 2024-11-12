@@ -12,7 +12,14 @@ class User(userId: Int, mail: String, pswd: String, hasPrivilege: Boolean, isAdm
         private set
     var isAdmin : Boolean = false
         private set
-
+    init
+    {
+        this.userId = userId
+        this.mail = mail
+        this.pswd = pswd
+        this.hasPrivilege = hasPrivilege
+        this.isAdmin = isAdmin
+    }
     override fun toString() : String
     {
         val sb = StringBuilder()

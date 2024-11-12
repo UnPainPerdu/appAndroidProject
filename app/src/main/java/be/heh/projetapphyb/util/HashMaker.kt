@@ -9,7 +9,7 @@ class HashMaker
     {
         fun hashPswd(pswd: String): String
         {
-            return MessageDigest.getInstance(pswd).digest("SHA-256".toByteArray(UTF_8)).toString()
+            return MessageDigest.getInstance("SHA-256").digest(pswd.toByteArray(UTF_8)).toString()
         }
     }
 }

@@ -6,6 +6,8 @@ import be.heh.exokotlin.db.UserRecord
 @Dao
 interface UserDao
 {
+    @Query("SELECT * FROM UserTable")
+    fun get(): List<UserRecord>
     @Query("SELECT * FROM UserTable WHERE user_id = :userId")
     fun get(userId: Int): UserRecord
     @Query("SELECT * FROM UserTable WHERE mail = :mail")

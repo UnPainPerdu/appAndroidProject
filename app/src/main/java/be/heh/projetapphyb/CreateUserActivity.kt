@@ -1,19 +1,19 @@
 package be.heh.projetapphyb
 
-import android.content.Intent
+import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.lifecycleScope
 import androidx.room.Room
 import be.heh.exokotlin.db.MyDB
 import be.heh.exokotlin.db.UserRecord
 import be.heh.projetapphyb.databinding.ActivityCreateUserBinding
 import be.heh.projetapphyb.db.User
+import be.heh.projetapphyb.util.ActivityTraveling.Companion.sentTo
 import be.heh.projetapphyb.util.HashMaker
-import kotlinx.coroutines.launch
+import be.heh.projetapphyb.util.ToastMaker
 
 class CreateUserActivity : AppCompatActivity()
 {
@@ -31,34 +31,28 @@ class CreateUserActivity : AppCompatActivity()
     {
         when(view.id)
         {
-            binding.btCreateuser1.id -> lifecycleScope.launch{createUser()}
-            binding.btCreateuser2.id -> sentTo("main")
+            binding.btCreateuser1.id -> AsyncTask.execute { createUser() }
+            binding.btCreateuser2.id -> sentTo("main", this)
             else -> Log.i("PROJETAPPHYB-ERROR", "no function start")
-        }
-    }
-
-    private fun sentTo(s: String)
-    {
-        Log.i("PROJETAPPHYB", "Send to : $s")
-        when(s)
-        {
-            "main"-> {startActivity(Intent(this, MainActivity::class.java))}
-            else -> Log.i("PROJETAPPHYB-ERROR", "no where to send")
         }
     }
 
     fun createUser()
     {
         Log.i("PROJETAPPHYB","Start user creation")
-        val mail = binding.etCreateuser1.text.toString()
+        var mail = binding.etCreateuser1.text.toString()
         val pswd = binding.etCreateuser2.text.toString()
         val verifPswd = binding.etCreateuser3.text.toString()
         if (mailIsValid(mail))
         {
+            mail = mail.replace(" ", "")
+            Log.i("PROJETAPPHYB","mail is valide")
             if(pswdIsValid(pswd))
             {
+                Log.i("PROJETAPPHYB","pswd is valide")
                 if (pswd.equals(verifPswd))
                 {
+                    Log.i("PROJETAPPHYB","pswd is verification pswd")
                     val userId : Int = createNewUserId()
                     var hasPrivilege = false
                     var isAdmin = false
@@ -67,6 +61,7 @@ class CreateUserActivity : AppCompatActivity()
                     {
                         hasPrivilege = true
                         isAdmin = true
+                        Log.i("PROJETAPPHYB","user is frist one -> Super admin")
                     }
                     val u = User(
                         userId,
@@ -75,41 +70,55 @@ class CreateUserActivity : AppCompatActivity()
                         hasPrivilege,
                         isAdmin
                     )
-
+                    Log.i("PROJETAPPHYB","création de user avec : $u")
                     val db = Room.databaseBuilder(
                         applicationContext,
                         MyDB::class.java,
                         "MyDataBase"
                     ).build()
+                    Log.i("PROJETAPPHYB","db initialized")
                     val dao = db.userDao()
-                    val uR = UserRecord(0, u.mail, u.pswd, u.hasPrivilege, u.isAdmin)
+                    Log.i("PROJETAPPHYB","dao initialized")
+                    val uR = UserRecord(u.userId, u.mail, u.pswd, u.hasPrivilege, u.isAdmin)
                     dao.insertUser(uR)
+                    Log.i("PROJETAPPHYB","user record triggered with : $uR")
 
-                    Toast.makeText(this, "Utilisateur créé", Toast.LENGTH_LONG).show()
+                    ToastMaker.makeToastAsync(this, "Utilisateur créé", Toast.LENGTH_LONG)
                 }
                 else
                 {
-                    Toast.makeText(this, "Erreur", Toast.LENGTH_LONG).show()
+                    ToastMaker.makeErrorAsync(this)
+                    Log.i("PROJETAPPHYB-ERROR", "pswd is not verification pswd")
                 }
             }
             else
             {
-                Toast.makeText(this, "Erreur", Toast.LENGTH_LONG).show()
+                ToastMaker.makeErrorAsync(this)
+                Log.i("PROJETAPPHYB-ERROR", "pswd contain space or is less than 4 characters")
             }
         }
         else
         {
-            Toast.makeText(this, "Erreur", Toast.LENGTH_LONG).show()
+            ToastMaker.makeErrorAsync(this)
+            Log.i("PROJETAPPHYB-ERROR", "mail is already use or is not a valid mail")
         }
     }
 
     private fun mailIsValid(mail: String): Boolean
     {
-        return getUserByMail(mail).mail == "INDEFINI" && android.util.Patterns.EMAIL_ADDRESS.matcher(mail).matches()
+        Log.i("PROJETAPPHYB","checking mail")
+        val mailGet = getUserByMail(mail).mail
+        val isIndefinite = mailGet == "INDEFINI" || mailGet == "null"
+        Log.i("PROJETAPPHYB","mail not used : $isIndefinite , sended : $mailGet")
+        val hasGoodMailFormat = android.util.Patterns.EMAIL_ADDRESS.matcher(mail).matches()
+        Log.i("PROJETAPPHYB","mail in good format : $hasGoodMailFormat")
+        val mailIsValid = isIndefinite && hasGoodMailFormat
+        return mailIsValid
     }
 
     private fun pswdIsValid(pswd: String): Boolean
     {
+        Log.i("PROJETAPPHYB","checking pswd")
         return (
                 (pswd.replace(" ", "").equals(pswd))
                         && pswd.length>=4
@@ -118,6 +127,7 @@ class CreateUserActivity : AppCompatActivity()
 
     fun getUserById(userId : Int): User
     {
+        Log.i("PROJETAPPHYB","getting user by id")
         val db = Room.databaseBuilder(
             applicationContext,
             MyDB::class.java, "MyDataBase"
@@ -129,13 +139,19 @@ class CreateUserActivity : AppCompatActivity()
 
     fun getUserByMail(mail : String): User
     {
+        Log.i("PROJETAPPHYB","getting user by mail")
         val db = Room.databaseBuilder(
             applicationContext,
             MyDB::class.java, "MyDataBase"
         ).build()
+        Log.i("PROJETAPPHYB","db intialized")
         val dao = db.userDao()
-        val dbL = dao?.get(mail)
-        return User(dbL?.userId?:-1, dbL?.mail?:"INDEFINI", dbL?.pswd?:"INDEFINI", dbL?.has_privilege?:false, dbL?.is_admin?:false)
+        Log.i("PROJETAPPHYB","dao intialized")
+        val dbL = dao.get(mail)
+        Log.i("PROJETAPPHYB","get mail trigger")
+        val user = User(dbL?.userId?:-1, dbL?.mail?:"INDEFINI", dbL?.pswd?:"INDEFINI", dbL?.has_privilege?:false, dbL?.is_admin?:false)
+        Log.i("PROJETAPPHYB","user got")
+        return user
     }
 
     fun createNewUserId(): Int
