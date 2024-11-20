@@ -1,7 +1,8 @@
 package be.heh.projetapphyb.util
 
+import java.math.BigInteger
+import java.nio.charset.StandardCharsets
 import java.security.MessageDigest
-import kotlin.text.Charsets.UTF_8
 
 class HashMaker
 {
@@ -9,7 +10,14 @@ class HashMaker
     {
         fun hashPswd(pswd: String): String
         {
-            return MessageDigest.getInstance("SHA-256").digest(pswd.toByteArray(UTF_8)).toString()
+            val md = MessageDigest.getInstance("SHA-256")
+
+            md.update(pswd.toByteArray(StandardCharsets.UTF_8))
+            val digest = md.digest()
+
+            val number = BigInteger(1, digest)
+            val hexHash = number.toString(16)
+            return hexHash
         }
     }
 }

@@ -3,6 +3,7 @@
     <!--Main-->
     <string name="tv_main_1">Bienvenue</string>
     <string name="tv_main_2">Veuillez vous connecter</string>
+    <string name="tv_main_3">Mot de passe ou \n mail incorrect</string>
     <string name="et_main_1">Email</string>
     <string name="et_main_2">Mot de passe</string>
     <string name="bt_main_1">Se connecter</string>

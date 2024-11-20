@@ -69,19 +69,36 @@
         app:layout_constraintTop_toBottomOf="@+id/et_main_1"
         app:layout_constraintVertical_bias="0.075" />
 
+    <TextView
+        android:id="@+id/tv_main_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/standart_vt"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/tv_main_3"
+        android:visibility="gone"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_main_2"
+        app:layout_constraintVertical_bias="0.054" />
+
     <Button
         android:id="@+id/bt_main_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/btn"
         android:onClick="onMainClickManager"
-        android:text="@string/bt_main_1"
         android:padding="10dp"
+        android:text="@string/bt_main_1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_main_2"
-        app:layout_constraintVertical_bias="0.143"
+        app:layout_constraintVertical_bias="0.334"
         tools:ignore="OnClick" />
 
     <Button
@@ -90,13 +107,13 @@
         android:layout_height="wrap_content"
         android:background="@drawable/btn"
         android:onClick="onMainClickManager"
-        android:text="@string/bt_main_2"
         android:padding="10dp"
+        android:text="@string/bt_main_2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt_main_1"
-        app:layout_constraintVertical_bias="0.143"
+        app:layout_constraintVertical_bias="0.225"
         tools:ignore="OnClick" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

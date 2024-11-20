@@ -24,5 +24,19 @@ class ToastMaker
         {
             makeToastAsync(activity, "Erreur", Toast.LENGTH_LONG)
         }
+
+        fun makeToast(activity : Activity, text: String, length : Int)
+        {
+            Toast.makeText(
+                    activity,
+                    text,
+                    length
+                ).show()
+        }
+
+        fun makeError(activity : Activity)
+        {
+            makeToast(activity, "Erreur", Toast.LENGTH_LONG)
+        }
     }
 }
