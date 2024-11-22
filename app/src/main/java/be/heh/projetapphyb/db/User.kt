@@ -1,6 +1,6 @@
 package be.heh.projetapphyb.db
 
-class User(userId: Int, mail: String, pswd: String, hasPrivilege: Boolean, isAdmin: Boolean)
+class User()
 {
     var userId : Int = -1
         private set
@@ -12,7 +12,7 @@ class User(userId: Int, mail: String, pswd: String, hasPrivilege: Boolean, isAdm
         private set
     var isAdmin : Boolean = false
         private set
-    init
+    constructor(userId: Int, mail: String, pswd: String, hasPrivilege: Boolean, isAdmin: Boolean) : this()
     {
         this.userId = userId
         this.mail = mail

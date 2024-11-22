@@ -11,11 +11,20 @@
     <!--CreateUser-->
     <string name="tv_createuser_1">Menu de création d\'utilisateur</string>
     <string name="tv_createuser_2">Insérer email et mot de passe</string>
+    <string name="tv_createuser_3.0">Ce mail existe déjà ou n\'est pas un mail valide</string>
+    <string name="tv_createuser_3.1">Mot de passe invalide : 4 caractères minimum sans espace</string>
+    <string name="tv_createuser_3.2">Mot de passe de vérification n\'est pas le mot de passe de base</string>
+    <string name="tv_createuser_3.3">Utilisateur créé</string>
     <string name="et_createuser_1">Email</string>
     <string name="et_createuser_2">Mot de passe</string>
     <string name="et_createuser_3">Confirmer le Mot de passe</string>
     <string name="bt_createuser_1">Créer l\'utilisateur</string>
     <string name="bt_createuser_2">Retour à la page de connection</string>
+    <!--Menu-->
+    <string name="bt_menu_1">Accéder aux utilisateurs</string>
+    <string name="bt_menu_2">Accéder aux matériels</string>
+    <string name="bt_menu_3">Se déconnecter</string>
+    <string name="tv_menu_1">Accès refusé</string>
 
 
 </resources>

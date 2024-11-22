@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/degrade"
+    tools:context=".MenuActivity">
+
+    <Button
+        android:id="@+id/bt_menu_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn"
+        android:onClick="onMainClickManager"
+        android:padding="10dp"
+        android:textSize="25sp"
+        android:text="@string/bt_menu_1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.263"
+        tools:ignore="OnClick" />
+
+    <Button
+        android:id="@+id/bt_menu_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn"
+        android:onClick="onMainClickManager"
+        android:padding="10dp"
+        android:textSize="25sp"
+        android:text="@string/bt_menu_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_menu_1"
+        app:layout_constraintVertical_bias="0.159"
+        tools:ignore="OnClick" />
+
+    <Button
+        android:id="@+id/bt_menu_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn"
+        android:onClick="onMainClickManager"
+        android:padding="10dp"
+        android:textSize="25sp"
+        android:text="@string/bt_menu_3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_menu_2"
+        app:layout_constraintVertical_bias="0.207"
+        tools:ignore="OnClick" />
+
+    <TextView
+        android:id="@+id/tv_menu_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/standart_vt"
+        android:padding="10dp"
+        android:textSize="30sp"
+        android:text="@string/tv_menu_1"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_menu_3"
+        app:layout_constraintVertical_bias="0.132" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

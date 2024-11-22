@@ -1,11 +1,11 @@
 package be.heh.projetapphyb
 
-import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import androidx.room.Room
 import be.heh.exokotlin.db.MyDB
 import be.heh.exokotlin.db.UserRecord
@@ -14,6 +14,9 @@ import be.heh.projetapphyb.db.User
 import be.heh.projetapphyb.util.ActivityTraveling.Companion.sentTo
 import be.heh.projetapphyb.util.HashMaker
 import be.heh.projetapphyb.util.ToastMaker
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class CreateUserActivity : AppCompatActivity()
 {
@@ -31,13 +34,13 @@ class CreateUserActivity : AppCompatActivity()
     {
         when(view.id)
         {
-            binding.btCreateuser1.id -> AsyncTask.execute { createUser() }
+            binding.btCreateuser1.id -> lifecycleScope.launch(Dispatchers.IO) { createUser() }
             binding.btCreateuser2.id -> sentTo("main", this)
             else -> Log.i("PROJETAPPHYB-ERROR", "no function start")
         }
     }
 
-    fun createUser()
+    suspend fun createUser()
     {
         Log.i("PROJETAPPHYB","Start user creation")
         var mail = binding.etCreateuser1.text.toString()
@@ -82,25 +85,43 @@ class CreateUserActivity : AppCompatActivity()
                     val uR = UserRecord(u.userId, u.mail, u.pswd, u.hasPrivilege, u.isAdmin)
                     dao.insertUser(uR)
                     Log.i("PROJETAPPHYB","user record triggered with : $uR")
-
+                    showMessage("tv_createuser_3.3")
                     ToastMaker.makeToastAsync(this, "Utilisateur créé", Toast.LENGTH_LONG)
                 }
                 else
                 {
                     ToastMaker.makeErrorAsync(this)
+                    showMessage("tv_createuser_3.2")
                     Log.i("PROJETAPPHYB-ERROR", "pswd is not verification pswd")
                 }
             }
             else
             {
                 ToastMaker.makeErrorAsync(this)
+                showMessage("tv_createuser_3.1")
                 Log.i("PROJETAPPHYB-ERROR", "pswd contain space or is less than 4 characters")
             }
         }
         else
         {
             ToastMaker.makeErrorAsync(this)
+            showMessage("tv_createuser_3.0")
             Log.i("PROJETAPPHYB-ERROR", "mail is already use or is not a valid mail")
+        }
+    }
+
+    private suspend fun showMessage(tradId : String)
+    {
+        withContext(Dispatchers.Main)
+        {
+            when(tradId)
+            {
+                "tv_createuser_3.0" -> binding.tvCreateuser3.text = getString(R.string.tv_createuser_3_0)
+                "tv_createuser_3.1" -> binding.tvCreateuser3.text = getString(R.string.tv_createuser_3_1)
+                "tv_createuser_3.2" -> binding.tvCreateuser3.text = getString(R.string.tv_createuser_3_2)
+                "tv_createuser_3.3" -> binding.tvCreateuser3.text = getString(R.string.tv_createuser_3_3)
+            }
+            binding.tvCreateuser3.visibility = View.VISIBLE
         }
     }
 
