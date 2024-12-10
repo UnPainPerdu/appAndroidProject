@@ -1,17 +1,13 @@
 package be.heh.projetapphyb
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.lifecycleScope
 import be.heh.projetapphyb.databinding.ActivityMenuBinding
 import be.heh.projetapphyb.util.ActivityTraveling
 import be.heh.projetapphyb.util.JsonConvertor
 import be.heh.projetapphyb.util.ToastMaker
 import be.heh.projetapphyb.util.db.UserDbToolBox
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class MenuActivity : AppCompatActivity()
 {
