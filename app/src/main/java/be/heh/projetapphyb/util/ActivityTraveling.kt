@@ -7,6 +7,7 @@ import be.heh.projetapphyb.CreateUserActivity
 import be.heh.projetapphyb.MainActivity
 import be.heh.projetapphyb.MenuActivity
 import be.heh.projetapphyb.UserListActivity
+import be.heh.projetapphyb.UserModificationActivity
 import be.heh.projetapphyb.db.User
 
 class ActivityTraveling
@@ -44,6 +45,14 @@ class ActivityTraveling
                 MATERIAL_LIST -> {i = Intent(activity, MenuActivity::class.java)}
             }
             activity.startActivity(i.putExtra("user", JsonConvertor.fromUserToJson(user)))
+        }
+
+        fun sentToModifierUser(user : User, userModifier : User, activity : Activity)
+        {
+            Log.i("PROJETAPPHYB", "Send to : UserModification")
+            var i = Intent(activity, UserModificationActivity::class.java)
+            activity.startActivity(i.putExtra("user", JsonConvertor.fromUserToJson(user))
+                .putExtra("userModifier", JsonConvertor.fromUserToJson(userModifier)))
         }
     }
 }

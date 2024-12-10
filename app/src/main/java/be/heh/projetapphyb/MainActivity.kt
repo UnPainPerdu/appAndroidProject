@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity()
     {
         override fun handleOnBackPressed()
         {
-            Log.i("PROJETAPPHYB", "Je fonctionne")
+            Log.i("PROJETAPPHYB", "Retour refusé")
         }
     }
 
