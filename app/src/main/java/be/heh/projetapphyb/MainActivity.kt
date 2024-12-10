@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity()
             {
                 binding.tvMain3.visibility = View.GONE
             }
-            ActivityTraveling.sentToWithUser("menu", potentialMatchingUser, this@MainActivity)
+            ActivityTraveling.sentToWithUser(ActivityTraveling.MENU, potentialMatchingUser, this@MainActivity)
         }
         else
         {

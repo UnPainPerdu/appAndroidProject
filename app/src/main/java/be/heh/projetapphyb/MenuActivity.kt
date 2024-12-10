@@ -1,13 +1,17 @@
 package be.heh.projetapphyb
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import be.heh.projetapphyb.databinding.ActivityMenuBinding
 import be.heh.projetapphyb.util.ActivityTraveling
 import be.heh.projetapphyb.util.JsonConvertor
 import be.heh.projetapphyb.util.ToastMaker
 import be.heh.projetapphyb.util.db.UserDbToolBox
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class MenuActivity : AppCompatActivity()
 {
@@ -43,8 +47,9 @@ class MenuActivity : AppCompatActivity()
         if (this.user.isAdmin)
         {
             binding.tvMenu1.visibility = View.GONE
-            ActivityTraveling.sentToWithUser(ActivityTraveling.USER_LIST, this.user, this)
+            ActivityTraveling.sentToWithUser(ActivityTraveling.USER_LIST, this.user, this@MenuActivity)
         }
+
         else
         {
             binding.tvMenu1.visibility = View.VISIBLE
@@ -54,6 +59,6 @@ class MenuActivity : AppCompatActivity()
     private fun sentToMaterialList()
     {
         binding.tvMenu1.visibility = View.GONE
-        ActivityTraveling.sentToWithUser(ActivityTraveling.MATERIAL_LIST, this.user, this)
+        ActivityTraveling.sentToWithUser(ActivityTraveling.MATERIAL_LIST, this.user, this@MenuActivity)
     }
 }
