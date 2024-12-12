@@ -12,15 +12,16 @@
         android:id="@+id/tv_usermodification_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/standart_vt"
+        android:padding="10dp"
         android:text="@string/tv_usermodification_1"
         android:textSize="25sp"
-        android:padding="10dp"
-        android:background="@drawable/standart_vt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.132" />
+        app:layout_constraintVertical_bias="0.108" />
 
     <TextView
         android:id="@+id/tv_usermodification_2"
@@ -35,7 +36,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_usermodification_1"
-        app:layout_constraintVertical_bias="0.039" />
+        app:layout_constraintVertical_bias="0.02" />
 
     <EditText
         android:id="@+id/et_usermodification_1"
@@ -44,6 +45,8 @@
         android:autofillHints="none"
         android:background="@drawable/standart_edit_texte"
         android:inputType="text"
+        android:textSize="15sp"
+        android:hint="@string/et_usermodification_1"
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -65,7 +68,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_usermodification_1"
-        app:layout_constraintVertical_bias="0.039" />
+        app:layout_constraintVertical_bias="0.021" />
 
     <EditText
         android:id="@+id/et_usermodification_2"
@@ -97,7 +100,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_usermodification_2"
-        app:layout_constraintVertical_bias="0.063" />
+        app:layout_constraintVertical_bias="0.026" />
 
     <Button
         android:id="@+id/bt_usermodification_1"
@@ -156,10 +159,42 @@
         android:text="@string/bt_usermodification_3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt_usermodification_2"
-        app:layout_constraintVertical_bias="0.409"
+        app:layout_constraintVertical_bias="0.097"
+        tools:ignore="OnClick" />
+
+    <Button
+        android:id="@+id/bt_usermodification_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn"
+        android:onClick="onMainClickManager"
+        android:padding="10dp"
+        android:text="@string/bt_usermodification_4"
+        app:layout_constraintBottom_toTopOf="@+id/tv_usermodification_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.333"
+        tools:ignore="OnClick" />
+
+    <Button
+        android:id="@+id/bt_usermodification_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dangerous_bt"
+        android:onClick="onMainClickManager"
+        android:padding="10dp"
+        android:text="@string/bt_usermodification_5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_usermodification_3"
+        app:layout_constraintVertical_bias="0.384"
         tools:ignore="OnClick" />
 
 

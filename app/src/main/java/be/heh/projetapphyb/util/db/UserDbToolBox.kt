@@ -4,7 +4,9 @@ import android.content.Context
 import android.util.Log
 import androidx.room.Room
 import be.heh.exokotlin.db.MyDB
+import be.heh.exokotlin.db.UserRecord
 import be.heh.projetapphyb.db.User
+import be.heh.projetapphyb.util.HashMaker
 
 class UserDbToolBox
 {
@@ -66,6 +68,39 @@ class UserDbToolBox
             }
             Log.i("PROJETAPPHYB", "user list got")
             return list.toList()
+        }
+
+        /**
+         * need to be call from coroutine
+         */
+        fun modifieUser(context: Context, userTarget: User, userModified : User)
+        {
+            Log.i("PROJETAPPHYB", "update user")
+            val db = Room.databaseBuilder(
+                context,
+                MyDB::class.java, "MyDataBase"
+            ).build()
+            Log.i("PROJETAPPHYB", "db intialized")
+            val dao = db.userDao()
+            Log.i("PROJETAPPHYB", "dao intialized")
+            dao.updateUser(UserRecord(userModified.userId, userModified.mail, HashMaker.hashPswd(userModified.pswd), userModified.hasPrivilege, userModified.isAdmin))
+        }
+        fun deleteUser(context: Context, userTarget: User)
+        {
+            Log.i("PROJETAPPHYB", "delete user")
+            val db = Room.databaseBuilder(
+                context,
+                MyDB::class.java, "MyDataBase"
+            ).build()
+            Log.i("PROJETAPPHYB", "db intialized")
+            val dao = db.userDao()
+            Log.i("PROJETAPPHYB", "dao intialized")
+            dao.deleteUser(UserRecord(userTarget.userId,
+                userTarget.mail,
+                HashMaker.hashPswd(userTarget.pswd),
+                userTarget.hasPrivilege,
+                userTarget.isAdmin)
+            )
         }
     }
 }

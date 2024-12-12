@@ -31,10 +31,12 @@
     <string name="tv_usermodification_3">Nouveau mot de passe :</string>
     <string name="et_usermodification_1">Laissez blanc si pas de changement</string>
     <string name="bt_usermodification_1">Changer privilégié</string>
-    <string name="tv_usermodification_4">Est privilégié : </string>
+    <string name="tv_usermodification_4">Est privilégié :</string>
     <string name="bt_usermodification_2">Changer admin</string>
-    <string name="tv_usermodification_5">Est admin : </string>
+    <string name="tv_usermodification_5">Est admin :</string>
     <string name="bt_usermodification_3">Sauvegarder les changements</string>
+    <string name="bt_usermodification_4">Retour en arrière</string>
+    <string name="bt_usermodification_5">Suprimer l\'utilisateur</string>
 
 
 

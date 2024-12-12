@@ -1,7 +1,6 @@
 package be.heh.exokotlin.db
 
 import androidx.room.*
-import be.heh.exokotlin.db.UserRecord
 
 @Dao
 interface UserDao
@@ -15,7 +14,7 @@ interface UserDao
     @Insert
     fun insertUser(vararg listCategories: UserRecord)
     @Update
-    fun updatePersonne(task: UserRecord)
+    fun updateUser(task: UserRecord)
     @Delete
-    fun deletePersonne(task: UserRecord)
+    fun deleteUser(task: UserRecord)
 }

@@ -3,15 +3,11 @@ package be.heh.projetapphyb.db
 class User()
 {
     var userId : Int = -1
-        private set
     var mail : String = "null"
-        private set
     var pswd : String = "null"
-        private set
     var hasPrivilege : Boolean = false
-        private set
     var isAdmin : Boolean = false
-        private set
+
     constructor(userId: Int, mail: String, pswd: String, hasPrivilege: Boolean, isAdmin: Boolean) : this()
     {
         this.userId = userId
