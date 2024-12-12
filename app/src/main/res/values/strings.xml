@@ -25,7 +25,9 @@
     <string name="bt_menu_2">Accéder aux matériels</string>
     <string name="bt_menu_3">Se déconnecter</string>
     <string name="tv_menu_1">Accès refusé</string>
-    <!--Menu-->
+    <!--User list-->
+    <string name="bt_userlist_1">Retour</string>
+    <!--User Modification-->
     <string name="tv_usermodification_1">Modification de l\'utilisateur : \n</string>
     <string name="tv_usermodification_2">Nouveau mail :</string>
     <string name="tv_usermodification_3">Nouveau mot de passe :</string>

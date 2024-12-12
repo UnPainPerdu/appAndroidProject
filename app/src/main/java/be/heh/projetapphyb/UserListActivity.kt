@@ -1,8 +1,10 @@
 package be.heh.projetapphyb
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,12 +24,20 @@ class UserListActivity : AppCompatActivity()
     private lateinit var binding: ActivityListUserBinding
     private var user = UserDbToolBox.defaultUser
     private var userList : List<User> = ArrayList<User>().toList()
+    private val onBackPressedCallBack : OnBackPressedCallback = object : OnBackPressedCallback(true)
+    {
+        override fun handleOnBackPressed()
+        {
+            Log.i("PROJETAPPHYB", "Retour refusé")
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
         binding = ActivityListUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        onBackPressedDispatcher.addCallback(this, onBackPressedCallBack)
         this.user = JsonConvertor.fromJsonToUser(intent.getStringExtra("user").toString())
         lifecycleScope.launch(Dispatchers.IO)
         {
@@ -41,6 +51,7 @@ class UserListActivity : AppCompatActivity()
         when(view.id)
         {
             R.id.button ->{lifecycleScope.launch(Dispatchers.IO) {userModificationDispatcher(view)}}
+            binding.btUserlist1.id -> ActivityTraveling.sentToWithUser(ActivityTraveling.MENU, this.user, this)
         }
     }
 
