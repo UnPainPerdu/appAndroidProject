@@ -24,7 +24,7 @@ class Matos()
         sb.append("ID : " + this.matosId.toString() + "\n" +
                 "Type : " + this.type + "\n" +
                 "Name : " + this.name + "\n" +
-                "Link : " + this.name + "\n" +
+                "Link : " + this.link + "\n" +
                 "N° de référence : " + this.refNumber + "\n" +
                 "Is available : " + this.isAvailable
         )

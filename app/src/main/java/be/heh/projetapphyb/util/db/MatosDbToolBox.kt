@@ -38,6 +38,7 @@ class MatosDbToolBox
                 dbL?.refNumber ?: "INDEFINI",
                 dbL?.is_available ?: false
             )
+            db.close()
             Log.i("PROJETAPPHYB", "matos got")
             return matos
         }
@@ -62,6 +63,7 @@ class MatosDbToolBox
                 dbL?.refNumber ?: "INDEFINI",
                 dbL?.is_available ?: false
             )
+            db.close()
             Log.i("PROJETAPPHYB", "matos got")
             return matos
         }
@@ -95,6 +97,7 @@ class MatosDbToolBox
                 )
                 list.add(matos)
             }
+            db.close()
             Log.i("PROJETAPPHYB", "matos list got")
             return list.toList()
         }
@@ -125,6 +128,7 @@ class MatosDbToolBox
                 )
                 list.add(matos)
             }
+            db.close()
             Log.i("PROJETAPPHYB", "matos list got")
             return list.toList()
         }
@@ -148,6 +152,7 @@ class MatosDbToolBox
                 matosTarget.link,
                 matosTarget.refNumber,
                 matosTarget.isAvailable))
+            db.close()
         }
         fun deleteMatos(context: Context, matosTarget: Matos)
         {
@@ -165,6 +170,7 @@ class MatosDbToolBox
                 matosTarget.link,
                 matosTarget.refNumber,
                 matosTarget.isAvailable))
+            db.close()
         }
     }
 }

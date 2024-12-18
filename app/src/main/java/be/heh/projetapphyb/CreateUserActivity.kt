@@ -21,13 +21,12 @@ import kotlinx.coroutines.withContext
 class CreateUserActivity : AppCompatActivity()
 {
     private lateinit var binding: ActivityCreateUserBinding
-
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
         binding = ActivityCreateUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        Log.i("PROJETAPPHYB", "CreateUSerActivity started")
+        Log.i("PROJETAPPHYB", "CreateUserActivity started")
     }
 
     fun onCreateUserClickManager(view : View)
@@ -85,6 +84,7 @@ class CreateUserActivity : AppCompatActivity()
                     val uR = UserRecord(u.userId, u.mail, u.pswd, u.hasPrivilege, u.isAdmin)
                     dao.insertUser(uR)
                     Log.i("PROJETAPPHYB","user record triggered with : $uR")
+                    db.close()
                     showMessage("tv_createuser_3.3")
                     ToastMaker.makeToastAsync(this, "Utilisateur créé", Toast.LENGTH_LONG)
                 }

@@ -3,11 +3,14 @@ package be.heh.projetapphyb.util
 import android.app.Activity
 import android.content.Intent
 import android.util.Log
+import be.heh.projetapphyb.CreateMatosActivity
 import be.heh.projetapphyb.CreateUserActivity
 import be.heh.projetapphyb.MainActivity
+import be.heh.projetapphyb.MatosListActivity
 import be.heh.projetapphyb.MenuActivity
 import be.heh.projetapphyb.UserListActivity
 import be.heh.projetapphyb.UserModificationActivity
+import be.heh.projetapphyb.db.Matos
 import be.heh.projetapphyb.db.User
 
 class ActivityTraveling
@@ -19,6 +22,7 @@ class ActivityTraveling
         const val MENU = "menu"
         const val USER_LIST = "user_list"
         const val MATERIAL_LIST = "material_list"
+        const val CREATE_MATERIAL = "create_material"
         fun sentTo(activityToSend: String, activity : Activity)
         {
             Log.i("PROJETAPPHYB", "Send to : $activityToSend")
@@ -42,7 +46,8 @@ class ActivityTraveling
             {
                 MENU -> {i = Intent(activity, MenuActivity::class.java)}
                 USER_LIST -> {i = Intent(activity, UserListActivity::class.java)}
-                MATERIAL_LIST -> {i = Intent(activity, MenuActivity::class.java)}
+                MATERIAL_LIST -> {i = Intent(activity, MatosListActivity::class.java)}
+                CREATE_MATERIAL -> {i = Intent(activity, CreateMatosActivity::class.java)}
             }
             activity.startActivity(i.putExtra("user", JsonConvertor.fromUserToJson(user)))
         }
@@ -53,6 +58,14 @@ class ActivityTraveling
             var i = Intent(activity, UserModificationActivity::class.java)
             activity.startActivity(i.putExtra("user", JsonConvertor.fromUserToJson(user))
                 .putExtra("userModifier", JsonConvertor.fromUserToJson(userModifier)))
+        }
+
+        fun sentToModifierMatos(user : User, matosModifier : Matos, activity : Activity)
+        {
+            Log.i("PROJETAPPHYB", "Send to : MatosModification")
+            var i = Intent(activity, UserModificationActivity::class.java)
+            activity.startActivity(i.putExtra("user", JsonConvertor.fromUserToJson(user))
+                .putExtra("matosModifier", JsonConvertor.fromMatosToJson(matosModifier)))
         }
     }
 }

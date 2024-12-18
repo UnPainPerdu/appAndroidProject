@@ -35,6 +35,7 @@ class UserDbToolBox
                 dbL?.has_privilege ?: false,
                 dbL?.is_admin ?: false
             )
+            db.close()
             Log.i("PROJETAPPHYB", "user got")
             return user
         }
@@ -66,6 +67,7 @@ class UserDbToolBox
                     userRecord?.is_admin ?: false  )
                 list.add(user)
             }
+            db.close()
             Log.i("PROJETAPPHYB", "user list got")
             return list.toList()
         }
@@ -84,6 +86,7 @@ class UserDbToolBox
             val dao = db.userDao()
             Log.i("PROJETAPPHYB", "dao intialized")
             dao.updateUser(UserRecord(userModified.userId, userModified.mail, HashMaker.hashPswd(userModified.pswd), userModified.hasPrivilege, userModified.isAdmin))
+            db.close()
         }
         fun deleteUser(context: Context, userTarget: User)
         {
@@ -101,6 +104,7 @@ class UserDbToolBox
                 userTarget.hasPrivilege,
                 userTarget.isAdmin)
             )
+            db.close()
         }
     }
 }

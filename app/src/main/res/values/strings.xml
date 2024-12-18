@@ -39,7 +39,24 @@
     <string name="bt_usermodification_3">Sauvegarder les changements</string>
     <string name="bt_usermodification_4">Retour en arrière</string>
     <string name="bt_usermodification_5">Suprimer l\'utilisateur</string>
-
+    <!--Matos list-->
+    <string name="bt_matoslist_1">Retour</string>
+    <string name="bt_matoslist_2">Créer un matériel</string>
+    <string name="dlg_matoslist_1.0">"Erreur"</string>
+    <string name="dlg_matoslist_1.1">Accès refusé</string>
+    <!--CreateMatos-->
+    <string name="tv_creatematos_1">Menu de création de matériel</string>
+    <string name="tv_creatematos_2">Insérer les détails du matériel</string>
+    <string name="dlg_creatematos_1.0">Erreur :</string>
+    <string name="dlg_creatematos_1.1">Tous les champs doivent être complétés</string>
+    <string name="dlg_creatematos_1.2">N° de référence invalide : déjà ultilisé</string>
+    <string name="dlg_creatematos_1.3">Matériel créé</string>
+    <string name="et_creatematos_1">Type (PC, GSM, Tablette,…)</string>
+    <string name="et_creatematos_2">Nom</string>
+    <string name="et_creatematos_3">Lien</string>
+    <string name="et_creatematos_4">N° de référence</string>
+    <string name="bt_creatematos_1">Créer le matériel</string>
+    <string name="bt_creatematos_2">Retour</string>
 
 
 </resources>
