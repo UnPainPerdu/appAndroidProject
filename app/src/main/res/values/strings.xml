@@ -57,6 +57,26 @@
     <string name="et_creatematos_4">N° de référence</string>
     <string name="bt_creatematos_1">Créer le matériel</string>
     <string name="bt_creatematos_2">Retour</string>
-
+    <!--DisplayMatos-->
+    <string name="tv_matosdisplay_1">N° de référence : </string>
+    <string name="tv_matosdisplay_2">id : </string>
+    <string name="tv_matosdisplay_3">Type : </string>
+    <string name="tv_matosdisplay_4">Nom : </string>
+    <string name="tv_matosdisplay_5">Lien : </string>
+    <string name="tv_matosdisplay_6">Est disponible : </string>
+    <string name="bt_matosdisplay_1">Modifier le matériel</string>
+    <string name="bt_matosdisplay_2">Retour</string>
+    <!--MatosModification-->
+    <string name="tv_matosmodification_1">Modification de :</string>
+    <string name="tv_matosmodification_2">N° de référence : </string>
+    <string name="tv_matosmodification_3">Type : </string>
+    <string name="tv_matosmodification_4">Nom : </string>
+    <string name="tv_matosmodification_5">Lien : </string>
+    <string name="tv_matosmodification_6">Est disponible : </string>
+    <string name="bt_matosmodification_1">Changer disponnibilité</string>
+    <string name="bt_matosmodification_2">Sauvegarder</string>
+    <string name="bt_matosmodification_3">Retour</string>
+    <string name="bt_matosmodification_4">Supprimer le matériel</string>
+    <string name="et_matosmodification_1">Laissez blanc si pas de changement</string>
 
 </resources>

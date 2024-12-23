@@ -79,9 +79,9 @@ class MatosListActivity : AppCompatActivity()
     private fun matosDisplayDispatcher(view : View)
     {
         val button : Button = view as Button
-        //val mailTemp : String = button.text.toString().replace("Modifier l'utilisateur ","")
-        //val userModifier : User = UserDbToolBox.getUser(applicationContext, mailTemp)
-        //ActivityTraveling.sentToModifierUser(this.user, userModifier, this@MatosListActivity)
+        val refNumberTemp : String = button.text.toString().replace("Afficher le matériel ","")
+        val matosDisplayer : Matos = MatosDbToolBox.getMatosByRefNumber(applicationContext, refNumberTemp)
+        ActivityTraveling.sentToDisplayMatos(this.user, matosDisplayer, this@MatosListActivity)
     }
 
     private fun matosCreationRedirection()

@@ -21,7 +21,7 @@
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.108" />
+        app:layout_constraintVertical_bias="0.024" />
 
     <TextView
         android:id="@+id/tv_usermodification_2"
@@ -162,7 +162,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt_usermodification_2"
-        app:layout_constraintVertical_bias="0.097"
+        app:layout_constraintVertical_bias="0.053"
         tools:ignore="OnClick" />
 
     <Button
@@ -173,12 +173,11 @@
         android:onClick="onMainClickManager"
         android:padding="10dp"
         android:text="@string/bt_usermodification_4"
-        app:layout_constraintBottom_toTopOf="@+id/tv_usermodification_1"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.333"
+        app:layout_constraintTop_toBottomOf="@+id/tv_usermodification_5"
+        app:layout_constraintVertical_bias="0.634"
         tools:ignore="OnClick" />
 
     <Button
@@ -194,7 +193,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt_usermodification_3"
-        app:layout_constraintVertical_bias="0.384"
+        app:layout_constraintVertical_bias="0.768"
         tools:ignore="OnClick" />
 
 

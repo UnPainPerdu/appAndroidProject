@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:fillViewport="false"
+    android:background="@drawable/degrade">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MatosModificationActivity">
+
+        <TextView
+            android:id="@+id/tv_matosmodification_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/standart_vt"
+            android:padding="10dp"
+            android:text="@string/tv_matosmodification_1"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.024" />
+
+        <TextView
+            android:id="@+id/tv_matosmodification_2"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/standart_vt"
+            android:padding="10dp"
+            android:text="@string/tv_matosmodification_2"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_matosmodification_1"
+            app:layout_constraintVertical_bias="0.02" />
+
+        <EditText
+            android:id="@+id/et_matosmodification_1"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:autofillHints="none"
+            android:background="@drawable/standart_edit_texte"
+            android:hint="@string/et_matosmodification_1"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_matosmodification_2"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tv_matosmodification_3"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/standart_vt"
+            android:padding="10dp"
+            android:text="@string/tv_matosmodification_3"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_matosmodification_1"
+            app:layout_constraintVertical_bias="0.021" />
+
+        <EditText
+            android:id="@+id/et_matosmodification_2"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:autofillHints="none"
+            android:background="@drawable/standart_edit_texte"
+            android:hint="@string/et_matosmodification_1"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_matosmodification_3"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tv_matosmodification_4"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/standart_vt"
+            android:padding="10dp"
+            android:text="@string/tv_matosmodification_4"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_matosmodification_2"
+            app:layout_constraintVertical_bias="0.021" />
+
+        <EditText
+            android:id="@+id/et_matosmodification_3"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:autofillHints="none"
+            android:background="@drawable/standart_edit_texte"
+            android:hint="@string/et_matosmodification_1"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_matosmodification_4"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tv_matosmodification_5"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/standart_vt"
+            android:padding="10dp"
+            android:text="@string/tv_matosmodification_5"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_matosmodification_3"
+            app:layout_constraintVertical_bias="0.021" />
+
+        <EditText
+            android:id="@+id/et_matosmodification_4"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:autofillHints="none"
+            android:background="@drawable/standart_edit_texte"
+            android:hint="@string/et_matosmodification_1"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_matosmodification_5"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tv_matosmodification_6"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/standart_vt"
+            android:padding="10dp"
+            android:text="@string/tv_matosmodification_6"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_matosmodification_4"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/bt_matosmodification_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn"
+            android:onClick="onMatosModificationClickManager"
+            android:padding="10dp"
+            android:text="@string/bt_matosmodification_1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_matosmodification_6"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="OnClick" />
+
+        <Button
+            android:id="@+id/bt_matosmodification_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn"
+            android:onClick="onMatosModificationClickManager"
+            android:padding="10dp"
+            android:text="@string/bt_matosmodification_2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bt_matosmodification_1"
+            app:layout_constraintVertical_bias="0.221"
+            tools:ignore="OnClick" />
+
+        <Button
+            android:id="@+id/bt_matosmodification_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn"
+            android:onClick="onMatosModificationClickManager"
+            android:padding="10dp"
+            android:text="@string/bt_matosmodification_3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bt_matosmodification_2"
+            app:layout_constraintVertical_bias="0.225"
+            tools:ignore="OnClick" />
+
+        <Button
+            android:id="@+id/bt_matosmodification_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/dangerous_bt"
+            android:onClick="onMatosModificationClickManager"
+            android:padding="10dp"
+            android:text="@string/bt_matosmodification_4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bt_matosmodification_3"
+            app:layout_constraintVertical_bias="0.4462"
+            tools:ignore="OnClick" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

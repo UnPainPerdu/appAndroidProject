@@ -52,7 +52,7 @@ class MatosDynamicList(private val dataSet: ArrayList<Matos>) :
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
         viewHolder.textView.text = tempTxt
-        viewHolder.button.text = "Afficher le matériel " + name
+        viewHolder.button.text = "Afficher le matériel " + refNumber
     }
 
     // Return the size of your dataset (invoked by the layout manager)

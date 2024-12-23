@@ -6,7 +6,9 @@ import android.util.Log
 import be.heh.projetapphyb.CreateMatosActivity
 import be.heh.projetapphyb.CreateUserActivity
 import be.heh.projetapphyb.MainActivity
+import be.heh.projetapphyb.MatosDisplayActivity
 import be.heh.projetapphyb.MatosListActivity
+import be.heh.projetapphyb.MatosModificationActivity
 import be.heh.projetapphyb.MenuActivity
 import be.heh.projetapphyb.UserListActivity
 import be.heh.projetapphyb.UserModificationActivity
@@ -60,12 +62,20 @@ class ActivityTraveling
                 .putExtra("userModifier", JsonConvertor.fromUserToJson(userModifier)))
         }
 
-        fun sentToModifierMatos(user : User, matosModifier : Matos, activity : Activity)
+        fun sentToDisplayMatos(user : User, matosModifier : Matos, activity : Activity)
+        {
+            Log.i("PROJETAPPHYB", "Send to : DisplayMatos")
+            var i = Intent(activity, MatosDisplayActivity::class.java)
+            activity.startActivity(i.putExtra("user", JsonConvertor.fromUserToJson(user))
+                .putExtra("matos", JsonConvertor.fromMatosToJson(matosModifier)))
+        }
+
+        fun sentToMatosModification(user : User, matosModifier : Matos, activity : Activity)
         {
             Log.i("PROJETAPPHYB", "Send to : MatosModification")
-            var i = Intent(activity, UserModificationActivity::class.java)
+            var i = Intent(activity, MatosModificationActivity::class.java)
             activity.startActivity(i.putExtra("user", JsonConvertor.fromUserToJson(user))
-                .putExtra("matosModifier", JsonConvertor.fromMatosToJson(matosModifier)))
+                .putExtra("matos", JsonConvertor.fromMatosToJson(matosModifier)))
         }
     }
 }
