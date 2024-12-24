@@ -66,6 +66,7 @@
     <string name="tv_matosdisplay_6">Est disponible : </string>
     <string name="bt_matosdisplay_1">Modifier le matériel</string>
     <string name="bt_matosdisplay_2">Retour</string>
+    <string name="iv_matosdisplay_1">qr_code</string>
     <!--MatosModification-->
     <string name="tv_matosmodification_1">Modification de :</string>
     <string name="tv_matosmodification_2">N° de référence : </string>

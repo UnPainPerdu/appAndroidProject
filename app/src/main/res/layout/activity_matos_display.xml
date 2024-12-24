@@ -29,6 +29,20 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.108" />
 
+        <ImageView
+            android:id="@+id/iv_matosdisplay_1"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:contentDescription="@string/iv_matosdisplay_1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_matosdisplay_1"
+            app:layout_constraintVertical_bias="0.0" />
+
         <TextView
             android:id="@+id/tv_matosdisplay_2"
             android:layout_width="300dp"
@@ -41,7 +55,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_matosdisplay_1"
+            app:layout_constraintTop_toBottomOf="@+id/iv_matosdisplay_1"
             app:layout_constraintVertical_bias="0.02" />
 
         <TextView

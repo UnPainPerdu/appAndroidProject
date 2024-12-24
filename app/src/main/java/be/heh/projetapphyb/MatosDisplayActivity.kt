@@ -1,10 +1,13 @@
 package be.heh.projetapphyb
 
 import android.content.Intent
+import android.graphics.Point
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidmads.library.qrgenearator.QRGContents
+import androidmads.library.qrgenearator.QRGEncoder
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -100,5 +103,33 @@ class MatosDisplayActivity : AppCompatActivity()
 
         tmpTxt = binding.tvMatosdisplay6.text.toString() + " " + isAvailable
         binding.tvMatosdisplay6.text = tmpTxt
+
+        val point = Point()
+
+        // getting width and
+        // height of a point
+        val width: Int = point.x
+        val height: Int = point.y
+
+
+        // generating dimension from width and height.
+        var dimen = if (width < height) width else height
+        dimen = dimen * 3 / 4
+
+        val qrgEncoder = QRGEncoder(this.matos.toString(), null, QRGContents.Type.TEXT, dimen)
+        try
+        {
+            // getting our qrcode in the form of bitmap.
+            val bitmap = qrgEncoder.getBitmap()
+            // the bitmap is set inside our image
+            // view using .setimagebitmap method.
+            binding.ivMatosdisplay1.setImageBitmap(bitmap)
+        }
+        catch (e : Exception)
+        {
+            // this method is called for
+            // exception handling.
+            Log.e("Tag", e.toString())
+        }
     }
 }
