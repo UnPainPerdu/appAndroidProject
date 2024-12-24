@@ -1,5 +1,7 @@
 package be.heh.projetapphyb
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -12,6 +14,7 @@ import be.heh.projetapphyb.util.ActivityTraveling
 import be.heh.projetapphyb.util.JsonConvertor
 import be.heh.projetapphyb.util.db.MatosDbToolBox
 import be.heh.projetapphyb.util.db.UserDbToolBox
+
 
 class MatosDisplayActivity : AppCompatActivity()
 {
@@ -44,7 +47,14 @@ class MatosDisplayActivity : AppCompatActivity()
         {
             binding.btMatosdisplay2.id -> {ActivityTraveling.sentToWithUser(ActivityTraveling.MATERIAL_LIST, this.user, this) }
             binding.btMatosdisplay1.id -> {sentToModificationMatos()}
+            binding.btMatosdisplay5.id -> {sentToInternet()}
         }
+    }
+
+    private fun sentToInternet()
+    {
+        val uri = Uri.parse(this.matos.link)
+        startActivity(Intent(Intent.ACTION_VIEW, uri))
     }
 
     private fun sentToModificationMatos()
@@ -85,8 +95,8 @@ class MatosDisplayActivity : AppCompatActivity()
         tmpTxt = binding.tvMatosdisplay4.text.toString() + " " + name
         binding.tvMatosdisplay4.text = tmpTxt
 
-        tmpTxt = binding.tvMatosdisplay5.text.toString() + " " + link
-        binding.tvMatosdisplay5.text = tmpTxt
+        tmpTxt = binding.btMatosdisplay5.text.toString() + " " + link
+        binding.btMatosdisplay5.text = tmpTxt
 
         tmpTxt = binding.tvMatosdisplay6.text.toString() + " " + isAvailable
         binding.tvMatosdisplay6.text = tmpTxt

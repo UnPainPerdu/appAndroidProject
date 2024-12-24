@@ -62,7 +62,7 @@
     <string name="tv_matosdisplay_2">id : </string>
     <string name="tv_matosdisplay_3">Type : </string>
     <string name="tv_matosdisplay_4">Nom : </string>
-    <string name="tv_matosdisplay_5">Lien : </string>
+    <string name="bt_matosdisplay_5">Lien : </string>
     <string name="tv_matosdisplay_6">Est disponible : </string>
     <string name="bt_matosdisplay_1">Modifier le matériel</string>
     <string name="bt_matosdisplay_2">Retour</string>
