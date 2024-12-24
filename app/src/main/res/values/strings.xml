@@ -47,7 +47,7 @@
     <!--CreateMatos-->
     <string name="tv_creatematos_1">Menu de création de matériel</string>
     <string name="tv_creatematos_2">Insérer les détails du matériel</string>
-    <string name="dlg_creatematos_1.0">Erreur :</string>
+    <string name="dlg_creatematos_1.0">Alerte :</string>
     <string name="dlg_creatematos_1.1">Tous les champs doivent être complétés</string>
     <string name="dlg_creatematos_1.2">N° de référence invalide : déjà ultilisé</string>
     <string name="dlg_creatematos_1.3">Matériel créé</string>
