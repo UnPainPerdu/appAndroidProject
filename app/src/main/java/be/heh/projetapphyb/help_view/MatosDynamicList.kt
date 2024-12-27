@@ -44,10 +44,10 @@ class MatosDynamicList(private val dataSet: ArrayList<Matos>) :
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int)
     {
         val MatosToDisplay : Matos = dataSet[position]
-        val matosId = MatosToDisplay.matosId
+        val matosType = MatosToDisplay.type
         val name = MatosToDisplay.name
         val refNumber = MatosToDisplay.refNumber
-        var tempTxt = "$matosId \n $refNumber \n $name "
+        var tempTxt = "$refNumber \n $matosType \n $name "
 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
