@@ -103,11 +103,11 @@ class MatosModificationActivity : AppCompatActivity()
             }
             if (flagName)
             {
-                matosModif.type = binding.etMatosmodification3.text.toString()
+                matosModif.name = binding.etMatosmodification3.text.toString()
             }
             if (flagLink)
             {
-                matosModif.type = binding.etMatosmodification4.text.toString()
+                matosModif.link = binding.etMatosmodification4.text.toString()
             }
             Log.i("PROJETAPPHYB", "Save modification of : \n $matosModif \n on :toto@hotmail.be \n $matos")
             MatosDbToolBox.modifieMatos(applicationContext, matosModif)
