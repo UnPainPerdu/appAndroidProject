@@ -62,7 +62,7 @@ class MatosDisplayActivity : AppCompatActivity()
 
     private fun sentToModificationMatos()
     {
-        if (user.hasPrivilege)
+        if (user.hasPrivilege || user.isAdmin)
         {
             ActivityTraveling.sentToMatosModification(this.user, this.matos, this@MatosDisplayActivity)
         }

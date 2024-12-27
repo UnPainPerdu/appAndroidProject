@@ -86,7 +86,7 @@ class MatosListActivity : AppCompatActivity()
 
     private fun matosCreationRedirection()
     {
-        if (this.user.hasPrivilege)
+        if (this.user.hasPrivilege || this.user.isAdmin)
         {
             ActivityTraveling.sentToWithUser(ActivityTraveling.CREATE_MATERIAL, this.user, this)
         }
